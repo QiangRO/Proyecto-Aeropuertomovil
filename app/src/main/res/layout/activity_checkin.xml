@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".CheckIn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="99dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:gravity="center"
+            android:text="Check In"
+            android:textColor="#2C4559"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Ingrese los datos"
+            android:textColor="#878383"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/etCodigoMascota"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Codigo"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#787777" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#817F7F" />
+
+        <EditText
+            android:id="@+id/etApellido"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#858484" />
+
+        <Button
+            android:id="@+id/btnMostrarLista"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="60dp"
+            android:text="Button"
+            android:textColor="@color/white"
+            android:backgroundTint="#2C4559"/>
+
+        <include layout="@layout/main_navigation_drawer" />
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

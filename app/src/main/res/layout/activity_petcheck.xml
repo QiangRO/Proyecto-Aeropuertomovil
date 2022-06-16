@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer_activity"
+    android:layout_height="match_parent"
+    tools:context=".PetCheck">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:gravity="center"
+            android:text="Registro de mascotas"
+            android:textColor="#2C4559"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etCodigoMascota"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Codigo de la Mascota"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#787777" />
+
+        <EditText
+            android:id="@+id/etNomMascota"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Nombre de mascota"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#858484" />
+
+        <EditText
+            android:id="@+id/etRaza"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Raza"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#787777" />
+
+        <EditText
+            android:id="@+id/etPesoMascota"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Peso de la mascota"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#817F7F" />
+
+        <EditText
+            android:id="@+id/etVacunaMascota"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Vacuna de Mascota"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#858484" />
+
+        <EditText
+            android:id="@+id/etFechaNacimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:ems="10"
+            android:hint="Fecha de nacimiento"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:textColorHint="#858484" />
+
+        <Button
+            android:id="@+id/btnMostrarLista"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="54dp"
+            android:backgroundTint="#2C4559"
+            android:text="Registrar"
+            android:textColor="@color/white" />
+
+        <include layout="@layout/main_navigation_drawer" />
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
