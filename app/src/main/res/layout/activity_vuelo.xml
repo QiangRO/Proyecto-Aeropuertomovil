@@ -19,16 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="99dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="517dp"
-        android:gravity="center"
-        android:text="Vuelos"
-        android:textColor="#2C4559"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+    <include
+        layout="@layout/main_navigation_drawer"
+        android:layout_width="match_parent" />
 
-    <include layout="@layout/main_navigation_drawer" />
+    <ListView
+        android:id="@+id/listmostrar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
   </LinearLayout>
 
