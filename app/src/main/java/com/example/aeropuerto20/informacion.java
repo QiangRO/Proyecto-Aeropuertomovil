@@ -24,7 +24,7 @@ public class informacion extends AppCompatActivity {
     //Cola de Peticiones -> a solicitudes que se hacen concurrentes en Internet
     private RequestQueue colaPeticiones;
 
-    private final String URL_BASE = "http://192.168.56.1/movil";
+    private final String URL_BASE = "http://192.168.0.5/aeropuerto";
     private String endPoint = "/mascotas.php";
     private ArrayList<Mascota> mascotas = new ArrayList<>();
 
@@ -35,13 +35,47 @@ public class informacion extends AppCompatActivity {
         binding = ActivityInformacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         colaPeticiones = Volley.newRequestQueue(this);
-        binding.btnResultadoLista.setOnClickListener(view -> {
-            peticionServicioWebBasico();
-        });
+
         binding.btnMostrarLista.setOnClickListener(view -> {
-            mostrarResultadosEndPoint();
+            buscarmascota("http://192.168.0.5/aeropuerto/mascotas.php?codigo="+binding.etmostrarmascotas.getText()+"");
         });
+
     }
+
+    private void buscarmascota(String url) {
+        JsonArrayRequest reqInformacion = new JsonArrayRequest(url, response -> {
+            JSONObject objeto = null;
+            if (response.length() > 0) {
+                try {
+                    Log.d("TAG", response.toString());
+                    for (int i = 0; i < response.length(); i++) {
+                        objeto = new JSONObject(response.get(i).toString());
+                        Mascota p = new Mascota(
+                                objeto.getInt("id"),
+                                objeto.getString("codigo"),
+                                objeto.getString("nombre"),
+                                objeto.getString("raza"),
+                                objeto.getString("peso"),
+                                objeto.getString("vacuna"),
+                                objeto.getString("fechaNacimiento")
+                        );
+                        mascotas.add(p);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                error -> {
+                    Toast.makeText(informacion.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+        );
+        colaPeticiones.add(reqInformacion);
+
+        mostrarResultadosEndPoint();
+    }
+
     private void mostrarResultadosEndPoint() {
         String mensaje = "";
         for (Mascota p: mascotas) {
@@ -49,6 +83,7 @@ public class informacion extends AppCompatActivity {
         }
         binding.txtListaMascotas.setText(mensaje);
     }
+
 
     private void peticionServicioWebBasico() {
         JsonArrayRequest reqInformacion = new JsonArrayRequest(

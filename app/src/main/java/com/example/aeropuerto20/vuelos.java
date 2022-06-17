@@ -1,25 +1,34 @@
 package com.example.aeropuerto20;
 
 public class vuelos {
-    String cod_vuelos, destino,fecha_llegada,fecha_salida;
+    private int cod;
+    private String destino;
+    private String fechasalida;
+    private String fechallegada;
 
-    public vuelos() {
-    }
-
-    public vuelos(String cod_vuelos, String destino, String fecha_llegada, String fecha_salida) {
-
-        this.cod_vuelos = cod_vuelos;
+    public vuelos(int cod, String destino, String fechasalida, String fechallegada) {
+        this.cod = cod;
         this.destino = destino;
-        this.fecha_llegada = fecha_llegada;
-        this.fecha_salida = fecha_salida;
+        this.fechasalida = fechasalida;
+        this.fechallegada = fechallegada;
     }
 
-    public String getCod_vuelos() {
-        return cod_vuelos;
+    @Override
+    public String toString() {
+        return "Datos de Vuelo{" +
+                "cod=" + cod +
+                ", destino='" + destino + '\'' +
+                ", fechasalida='" + fechasalida + '\'' +
+                ", fechallegada='" + fechallegada + '\'' +
+                '}';
     }
 
-    public void setCod_vuelos(String cod_vuelos) {
-        this.cod_vuelos = cod_vuelos;
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public String getDestino() {
@@ -30,19 +39,19 @@ public class vuelos {
         this.destino = destino;
     }
 
-    public String getFecha_llegada() {
-        return fecha_llegada;
+    public String getFechasalida() {
+        return fechasalida;
     }
 
-    public void setFecha_llegada(String fecha_llegada) {
-        this.fecha_llegada = fecha_llegada;
+    public void setFechasalida(String fechasalida) {
+        this.fechasalida = fechasalida;
     }
 
-    public String getFecha_salida() {
-        return fecha_salida;
+    public String getFechallegada() {
+        return fechallegada;
     }
 
-    public void setFecha_salida(String fecha_salida) {
-        this.fecha_salida = fecha_salida;
+    public void setFechallegada(String fechallegada) {
+        this.fechallegada = fechallegada;
     }
 }

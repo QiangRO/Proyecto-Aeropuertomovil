@@ -23,10 +23,17 @@
         layout="@layout/main_navigation_drawer"
         android:layout_width="match_parent" />
 
-    <ListView
-        android:id="@+id/listmostrar"
+    <TextView
+        android:id="@+id/txtlistavuelos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="512dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnmostrarvuelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mostrar vuelos" />
 
   </LinearLayout>
 
